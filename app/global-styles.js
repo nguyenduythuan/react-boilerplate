@@ -38,7 +38,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: #1976d2;
   }
   .MuiTable-root {
-    margin-top: 50px;
+    margin-top: 20px;
+  }
+  footer {
+    background-color: #1976d2;
+    text-align: center;
+    padding: 40px;
+    color: white;
+    margin-top: 40px;
   }
 `;
 
