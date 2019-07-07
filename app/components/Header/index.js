@@ -23,7 +23,7 @@ class Header extends React.Component {
     return (
       <AppBar position="static" color="primary">
         <Toolbar>
-          <Typography variant="h6" noWrap ml="40">
+          <Typography variant="h5" noWrap ml="40">
             Demo-react
           </Typography>
           <NavBar>

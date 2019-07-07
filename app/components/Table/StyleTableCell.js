@@ -6,4 +6,10 @@ export default styled(TableCell)`
         background-color: black;
         color: white;
     }
+    &.MuiTableCell-head:first-child {
+        border-top-left-radius: 5px;
+    }
+    &.MuiTableCell-head:last-child {
+        border-top-right-radius: 5px;
+    }
 `;

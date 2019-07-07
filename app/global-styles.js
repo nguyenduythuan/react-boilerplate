@@ -37,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
   header:first-child {
     background-color: #1976d2;
   }
+  .MuiTable-root {
+    margin-top: 50px;
+  }
 `;
 
 export default GlobalStyle;
