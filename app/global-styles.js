@@ -26,6 +26,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+  #active {
+    color: white;
+    opacity: 0.7;
+  }
+  #active:hover {
+    background-color: #00000014;
+    color: white;
+  }
+  header:first-child {
+    background-color: #1976d2;
+  }
 `;
 
 export default GlobalStyle;
