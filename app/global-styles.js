@@ -26,16 +26,19 @@ const GlobalStyle = createGlobalStyle`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
-  #active {
+  a#active {
     color: white;
     opacity: 0.7;
   }
-  #active:hover {
+  a#active:hover {
     background-color: #00000014;
     color: white;
   }
-  header:first-child {
+  header.MuiPaper-root.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-positionStatic.MuiAppBar-colorPrimary {
     background-color: #1976d2;
+    min-height: 4rem;
+    display: flex;
+    justify-content: center;
   }
   .MuiTable-root {
     margin-top: 20px;

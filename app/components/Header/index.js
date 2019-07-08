@@ -1,37 +1,50 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import NavBar from '../Header/NavBar';
-import HeaderLink from '../Header/HeadLink';
+import NavBar from './NavBar';
+import HeaderLink from './HeadLink';
 import urls from './urls';
+import NavTitle from './NavTitle';
+import Nav from './Nav';
 
 class Header extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      active: location.pathname
-    }
+      active: location.pathname,
+    };
   }
-  clickA(path){
+
+  clickA(path) {
     this.setState({
-      active: path
-    })
+      active: path,
+    });
   }
+
   render() {
     return (
       <AppBar position="static" color="primary">
-        <Toolbar>
-          <Typography variant="h5" noWrap ml="40">
-            Demo-react
-          </Typography>
+        <Nav>
+          <NavTitle>
+            <Typography variant="h5" noWrap>
+              Demo-react
+            </Typography>
+          </NavTitle>
           <NavBar>
-            {
-              urls.map((url) => <HeaderLink id={this.state.active === url.path ? "active" : ""} to={url.path} key={url.id} onClick={() => this.clickA(url.path)}> {url.title} </HeaderLink>)
-            }
+            {urls.map(url => (
+              <HeaderLink
+                id={this.state.active === url.path ? 'active' : ''}
+                to={url.path}
+                key={url.id}
+                onClick={() => this.clickA(url.path)}
+              >
+                {' '}
+                {url.title}{' '}
+              </HeaderLink>
+            ))}
           </NavBar>
-        </Toolbar>
+        </Nav>
       </AppBar>
     );
   }

@@ -8,13 +8,14 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import StyledTableCell from '../Table/StyleTableCell';
-import Section from '../../components/Section';
+import StyledTableCell from './StyleTableCell';
+import Section from '../Section';
 
 export default class Tables extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const { dataUser } = this.props;
     return (
@@ -23,7 +24,7 @@ export default class Tables extends React.Component {
           <Box mt={2}>
             <Typography variant="h4" noWrap>
               List User
-          </Typography>
+            </Typography>
           </Box>
           <Paper>
             <Table>
@@ -37,17 +38,21 @@ export default class Tables extends React.Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {
-                  dataUser.map((user) => (
-                    <TableRow key={user.id}>
-                      <StyledTableCell align="left">{user.id}</StyledTableCell>
-                      <StyledTableCell align="left">{user.first_name + " " + user.last_name}</StyledTableCell>
-                      <StyledTableCell align="left">{user.email}</StyledTableCell>
-                      <StyledTableCell align="left">{user.gender}</StyledTableCell>
-                      <StyledTableCell align="left">{user.ip_address}</StyledTableCell>
-                    </TableRow>
-                  ))
-                }
+                {dataUser.map(user => (
+                  <TableRow key={user.id}>
+                    <StyledTableCell align="left">{user.id}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      {`${user.first_name} ${user.last_name}`}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">{user.email}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      {user.gender}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">
+                      {user.ip_address}
+                    </StyledTableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </Paper>
